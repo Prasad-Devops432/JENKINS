@@ -106,13 +106,4 @@ Watch step-by-step how this pipeline was created.
 
 ---
 
-## 👨‍💻 Author
-**Shubham Gour**  
-Release Engineer | DevOps | Cloud | YouTuber  
-🔗 [LinkedIn](https://www.linkedin.com/in/theshubhamgour/)  
-🎥 [YouTube](https://www.youtube.com/shubhamgourtech)
 
----
-
-## 📜 License
-MIT License © 2025 Shubham Gour Tech
