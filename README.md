@@ -1,160 +1,33 @@
-# 🚀 Jenkins CI/CD Projects – End‑to‑End DevOps Pipelines
+# Jenkins Practice Projects
 
-This repository contains multiple **Jenkins CI/CD pipeline projects** demonstrating real‑world DevOps workflows including **Maven builds, Docker pipelines, SonarQube scanning, Kubernetes deployments, ArgoCD GitOps, multi‑agent pipelines, shared libraries**, and more.
+A set of Jenkins exercises, from installing Jenkins to building multi-stage pipelines
+with Docker, shared libraries and webhooks. The folders are numbered in the order I
+worked through them. Each folder has its own README with the steps and notes.
 
-Each folder represents a hands‑on Jenkins automation scenario designed to help you master CI/CD from beginner to advanced level.
+## Folders
 
----
+| Folder | Topic |
+|--------|-------|
+| `1-installation` | Installing Jenkins |
+| `2-Jenkins-pipeline` | Scripted and declarative pipeline syntax, with a small Java example (`First.java`) |
+| `3-java-jenkins-docker-app` | Maven Java app: build, test and Docker image pipeline (`Jenkinsfile`, `Dockerfile`, `docker-compose.yml`) |
+| `4-python-jenkins-docker-app` | Python app: install, test and Docker image pipeline (`app.py`, `tests/`, `Dockerfile`) |
+| `5-Agent-Setup` | Setting up a Jenkins build agent (`jenkins-agent-init-run`) |
+| `6-Agent-execution` | Running a pipeline on an agent (`python-app`) |
+| `7-Environment-Variables` | Environment variables and credentials in a pipeline |
+| `8-Project-1-Python-Flask-App` | Project: Flask app pipeline |
+| `9-Project-2-React-github-summarizer` | Project: React app pipeline |
+| `10-Project-3-maven-jenkins-cicd` | Project: Maven CI/CD pipeline |
+| `11-github-webhook` | Triggering builds from GitHub webhooks |
+| `12-jenkins-shared-library` | Jenkins shared libraries |
 
-## 📁 Repository Structure
+## Running the examples
 
-### **1. my-first-pipeline/**
-A simple beginner‑friendly Jenkins pipeline demonstrating:
-- Basic pipeline syntax  
-- Stages (Build → Test → Deploy)  
-- Console output  
-- Understanding Jenkinsfile structure  
+Each example needs Jenkins with the Pipeline plugin, and most need Docker and Maven
+or Python on the agent. Start with the folder that matches the step you are on, then
+read its README for the exact setup.
 
-**Skills:** Declarative Pipeline, Jenkins basics
+## Notes
 
----
-
-### **2. java-maven-sonar-argocd-helm-k8s/**
-A complete enterprise‑style CI/CD pipeline:
-- Build Java app using **Maven**
-- Run **unit tests**
-- Perform **SonarQube code quality scan**
-- Build & push **Docker image**
-- Deploy to Kubernetes using:
-  - **Helm charts**
-  - **ArgoCD GitOps automation**
-
-**Skills:** Maven, SonarQube, Docker, Helm, Kubernetes, ArgoCD, GitOps
-
----
-
-### **3. python-jenkins-argocd-k8s/**
-A Python application pipeline including:
-- Python dependency installation  
-- Unit testing  
-- Docker image build  
-- Push to registry  
-- ArgoCD auto‑sync deployment  
-
-**Skills:** Python, Docker, Kubernetes, ArgoCD
-
----
-
-### **4. multi-stage-multi-agent/**
-A Jenkins pipeline using **multiple agents**:
-- Build on one agent  
-- Test on another  
-- Deploy from a dedicated deploy agent  
-- Demonstrates distributed CI/CD architecture  
-
-**Skills:** Jenkins agents, Node labels, Multi‑stage pipelines
-
----
-
-### **5. shared-libraries/**  
-Reusable Jenkins Shared Library:
-- Custom global functions  
-- Reusable pipeline steps  
-- `vars/` folder with Groovy scripts  
-- Helps avoid duplicate code across pipelines  
-
-**Skills:** Groovy, Jenkins Shared Libraries, DRY pipelines
-
----
-
-### **6. vars/**  
-Contains Groovy functions used by the shared library:
-- Logging functions  
-- Build helpers  
-- Deployment helpers  
-
-**Skills:** Groovy scripting, Jenkins automation
-
----
-
-## 🧰 Tools & Technologies
-
-| Category | Tools |
-|---------|-------|
-| **CI/CD** | Jenkins, Shared Libraries, Multi‑Agent Pipelines |
-| **Build Tools** | Maven, Python, npm |
-| **Containers** | Docker, Docker Hub |
-| **Quality** | SonarQube |
-| **Kubernetes** | Helm, ArgoCD, GitOps |
-| **Cloud** | AWS EC2 (Jenkins Master & Agents) |
-
----
-
-## 🏗️ Example Jenkinsfile (General Structure)
-
-```groovy
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo "Building application..."
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-            }
-        }
-
-        stage('Docker Build & Push') {
-            steps {
-                echo "Building Docker image..."
-            }
-        }
-
-        stage('Deploy to Kubernetes') {
-            steps {
-                echo "Deploying using Helm/ArgoCD..."
-            }
-        }
-    }
-}
-```
-
----
-
-## 🚀 How to Use This Repository
-
-### **Clone the repo**
-```bash
-git clone https://github.com/Prasad-Devops432/JENKINS.git
-cd JENKINS
-```
-
-### **Choose a project folder**
-Example:
-```bash
-cd java-maven-sonar-argocd-helm-k8s
-```
-
-### **Create a Jenkins Pipeline**
-1. Open Jenkins → New Item  
-2. Select **Pipeline**  
-3. Choose **Pipeline from SCM**  
-4. Paste your repo URL  
-5. Select the folder containing the Jenkinsfile  
-
----
-
-## 🎯 Purpose of This Repository
-
-This repo is designed to:
-- Demonstrate **real DevOps CI/CD pipelines**
-- Showcase your **hands‑on Jenkins experience**
-- Provide recruiters with **clear project examples**
-- Help you practice **enterprise‑level automation**
-
----
+- Some folders are still notes or stubs, with a README only. Check the folder before relying on it.
+- Build output (`target/`) and `.DS_Store` files are excluded in `.gitignore`.
